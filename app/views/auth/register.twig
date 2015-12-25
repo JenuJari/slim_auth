@@ -1,0 +1,33 @@
+{% extends "templates/default.twig" %}
+
+{% block title %}
+    Register
+{% endblock %} 
+
+{% block content %}
+    <form action="{{ urlFor('register.post') }}" method="post" autocomplete="off">
+        <div>
+            <label for="email">Email ::</label>
+            <input type="email" id="email" value="{{ request.post('email') }}" name="email">
+            {%  if errors.first('email') %}{{ errors.first('email') }}{% endif %}
+        </div>
+        <div>
+            <label for="user_name">Username ::</label>
+            <input type="text" id="user_name" value="{{ request.post('user_name') }}" name="user_name">
+            {%  if errors.first('username') %}{{ errors.first('username') }}{% endif %}
+        </div>
+        <div>
+            <label for="password">Password ::</label>
+            <input type="password" value="{{ request.post('password') }}" id="password" name="password">
+            {%  if errors.first('password') %}{{ errors.first('password') }}{% endif %}
+        </div>
+        <div>
+            <label for="confirm_password">Confirm Password ::</label>
+            <input type="password" value="{{ request.post('confirm_password') }}" id="confirm_password" name="confirm_password">
+            {%  if errors.first('confirm_password') %}{{ errors.first('confirm_password') }}{% endif %}
+        </div>
+        <div>
+            <input type="submit" value="register">
+        </div>
+    </form>
+{% endblock %}

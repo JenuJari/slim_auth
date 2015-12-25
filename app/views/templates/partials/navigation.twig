@@ -1,0 +1,14 @@
+{%  if auth %}
+<p> Hello {{ auth.getFullNameOrUserName }}</p>
+{%  endif %}
+<ul>
+    <li>
+        <a href="{{ urlFor('home') }}">home</a>
+        {% if auth %}
+            <a href="{{ urlFor('log_out') }}">Logout</a>
+        {% else %}
+            <a href="{{ urlFor('register') }}">Register</a>
+            <a href="{{ urlFor('login') }}">Login</a>
+        {% endif %}
+    </li>
+</ul>

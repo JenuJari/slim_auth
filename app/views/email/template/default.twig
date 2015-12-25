@@ -1,0 +1,17 @@
+{% if auth %}
+<p>
+  Hello
+  {{ auth.getFullNameOrUserName()}},
+</p>
+{% elseif user %}
+<p>
+  Hello
+  {{ user.getFullNameOrUserName()}},
+</p>
+{% else %}
+<p>
+  Hello there,
+</p>
+{% endif %}
+
+{% block content %}{% endblock %}

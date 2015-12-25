@@ -1,0 +1,10 @@
+{% extends 'email/template/default.twig' %}
+
+{% block content %}
+    <p>
+        Congratulations you have sucessfully registered with us.
+    </p>
+    <p>
+        Activate your account using this link :: {{ baseUrl }}{{ urlFor('account_activate') }}?email={{ user.email }}&identifier={{ identifier|url_encode }}
+    </p>
+{% endblock %}
