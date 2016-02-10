@@ -27,6 +27,7 @@
             {%  if errors.first('confirm_password') %}{{ errors.first('confirm_password') }}{% endif %}
         </div>
         <div>
+            <input type="hidden" value="{{ csrf_token }}" id="{{ csrf_key }}" name="{{ csrf_key }}">
             <input type="submit" value="register">
         </div>
     </form>

@@ -9,12 +9,15 @@
         <div>
             <label for="identifier">Identifier ::</label>
             <input type="text" id="identifier" value="{{ request.post('identifier') }}" name="identifier">
-            {%  if errors.first('identifier') %}{{ errors.first('identifier') }}{% endif %}
+            {% if errors.first('identifier') %}{{ errors.first('identifier') }}{% endif %}
         </div>
         <div>
             <label for="password">Password ::</label>
             <input type="password" value="{{ request.post('password') }}" id="password" name="password">
-            {%  if errors.first('password') %}{{ errors.first('password') }}{% endif %}
+            {% if errors.first('password') %}{{ errors.first('password') }}{% endif %}
+        </div>
+        <div>
+            <input type="checkbox" name="remember" id="remember"><label form="remember">Remember me</label>
         </div>
         <div>
             <input type="hidden" value="{{ csrf_token }}" id="{{ csrf_key }}" name="{{ csrf_key }}">
