@@ -16,7 +16,7 @@ return array(
     'db' => array(
         'driver' => 'mysql',
         'host' => '127.0.0.1',
-        'name' => 'dbslim_twig',
+        'name' => 'db_slim_auth',
         'username' => 'root',
         'password' => 'Abcdefg1',
         'charset' => 'utf8',

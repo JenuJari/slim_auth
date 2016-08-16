@@ -1,6 +1,6 @@
 <?php
 
-namespace Codesource\Helpers;
+namespace source_code\Helpers;
 
 /**
  * Description of Hash

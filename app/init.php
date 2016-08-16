@@ -11,19 +11,20 @@ use Slim\Slim;
 use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
 use Noodlehaus\Config;
-use Codesource\User\User;
-use Codesource\Helpers\Hash;
-use \Codesource\Validation\Validator;
-use Codesource\Mail\Mailer;
-use Codesource\Middleware\CsrfMiddleware;
-use Codesource\Middleware\BeforeMiddleware;
-use \PHPMailer\PHPMailer\PHPMailer;
+use source_code\User\User;
+use source_code\Helpers\Hash;
+use source_code\Validation\Validator;
+use source_code\Mail\Mailer;
+use source_code\Middleware\CsrfMiddleware;
+use source_code\Middleware\BeforeMiddleware;
+use PHPMailer\PHPMailer\PHPMailer;
 use RandomLib\Factory as RandomLib;
 
 session_cache_limiter(false);
 session_start();
 
 ini_set('display_errors', 'On');
+
 
 define('INC_ROOT', dirname(__DIR__));
 
@@ -72,6 +73,7 @@ $app->container->singleton('randomLib',function()  {
     $factory= new RandomLib();
     return $factory->getMediumStrengthGenerator();
 });
+
 $view = $app->view();
 $view->parserOptions = array('debug' => $app->config->get('twig.debug'));
 $view->parserExtensions = array(new TwigExtension());

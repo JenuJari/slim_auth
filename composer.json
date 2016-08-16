@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Codesource\\": "app/Codesource"
+            "source_code\\": "app/source_code"
         }
     },
     "require": {

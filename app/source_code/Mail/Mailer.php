@@ -6,7 +6,7 @@
  * Time: PM 04:21
  */
 
-namespace Codesource\Mail;
+namespace source_code\Mail;
 
 class Mailer
 {

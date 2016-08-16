@@ -1,6 +1,6 @@
 <?php
 
-namespace Codesource\User;
+namespace source_code\User;
 
 use Illuminate\Database\Eloquent\Model;
 

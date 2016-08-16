@@ -6,7 +6,7 @@
  * Time: AM 12:49
  */
 
-namespace Codesource\Middleware;
+namespace source_code\Middleware;
 
 use Codesource\User\User;
 use Slim\Middleware;

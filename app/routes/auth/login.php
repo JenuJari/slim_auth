@@ -16,10 +16,8 @@ $app->post('/login', $guest(), function () use ($app) {
     $remember = $request->post('remember');
 
     $v = $app->Validation;
-    $v->validate([
-        'identifier' => [$identifier, 'required'],
-        'password' => [$password, 'required'],
-    ]);
+    $v->validate(array('identifier' => array($identifier, 'required'),
+        'password' => array($password, 'required')));
 
     if ($v->passes()) {
         $u = $app->user
@@ -54,9 +52,9 @@ $app->post('/login', $guest(), function () use ($app) {
 
 $app->get('/logout', $authenticated(), function () use ($app) {
     unset($_SESSION[$app->config->get('auth.session')]);
-    if ($app->getCookie($this->app->config->get('auth.remember'))) {
+    if ($app->getCookie($app->config->get('auth.remember'))) {
         $app->auth->removeRememberToken();
-        $app->deleteCookie($this->app->config->get('auth.remember'));
+        $app->deleteCookie($app->config->get('auth.remember'));
     }
     $app->flash('global', 'You are now logged out!');
     $app->response->redirect($app->urlFor('home'));
